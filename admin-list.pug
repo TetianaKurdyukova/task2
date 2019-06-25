@@ -1,0 +1,8 @@
+include includes/header.pug
+div.container
+    h1.text-center Admin List
+    ul.nav
+        each p in pages
+            li
+                a(href='/' + p.url + '.html')=p.title
+                input.btn.btn-primary(type='button', value='Delete' onclick='onPageDelete(' + p.id + ');')

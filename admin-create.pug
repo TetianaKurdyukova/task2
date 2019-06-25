@@ -1,0 +1,28 @@
+include includes/header.pug
+div.container
+    h1.text-center Create New Page
+ 
+    form(method='post')
+        div.form-group
+            if errors.title
+                p.error.text-danger #{errors.title}
+            label Title
+            input.form-control(type='text', name='title', value=form.title)
+        div.form-group
+            label Meta Description
+            input.form-control(type='text', name='metaDescription', value=form.metaDescription)
+        div.form-group
+            if errors.content
+                p.error.text-danger #{errors.content}
+            label Content
+            textarea#summernote(name="content", cols="40", rows="5")
+                | #{form.content}
+        div.form-group
+            if errors.url
+                p.error.text-danger #{errors.url}
+            label Url
+            input.form-control(type='text', name='url', value=form.url)
+        input.btn.btn-primary(type='submit', value='Add New Page')
+        
+        
+        
